@@ -40,6 +40,12 @@ namespace Paint_Application
         {
             InitializeComponent();
 
+            typeof(Panel).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty |
+                System.Reflection.BindingFlags.Instance |
+                System.Reflection.BindingFlags.NonPublic,
+                null, pnlCanvas, new object[] { true });
+
             // Pen & Brush mac dinh
             myPen = new Pen(penColor, 3);
             myPen.StartCap = LineCap.Round;
