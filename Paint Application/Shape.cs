@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace Paint_Application
 {
-    // ================================================================
+   
     // ENUM
-    // ================================================================
+   
     public enum DrawTool
     {
         Select,
@@ -22,9 +22,9 @@ namespace Paint_Application
         FilledCircle
     }
 
-    // ================================================================
+   
     // BASE CLASS
-    // ================================================================
+   
     public abstract class Shape
     {
         public Pen Pen { get; set; }
@@ -55,9 +55,9 @@ namespace Paint_Application
         }
     }
 
-    // ================================================================
+   
     // LINE
-    // ================================================================
+   
     public class LineShape : Shape
     {
         public Point P1, P2;
@@ -102,9 +102,9 @@ namespace Paint_Application
         }
     }
 
-    // ================================================================
+   
     // RECTANGLE
-    // ================================================================
+   
     public class RectShape : Shape
     {
         public Rectangle Rect;
@@ -141,9 +141,9 @@ namespace Paint_Application
         }
     }
 
-    // ================================================================
+   
     // ELLIPSE
-    // ================================================================
+   
     public class EllipseShape : Shape
     {
         public Rectangle Rect;
@@ -185,9 +185,9 @@ namespace Paint_Application
         }
     }
 
-    // ================================================================
+   
     // CIRCLE (ellipse vuong)
-    // ================================================================
+   
     public class CircleShape : EllipseShape
     {
         public CircleShape(Rectangle r, Pen pen, Brush brush, bool filled)
@@ -200,9 +200,9 @@ namespace Paint_Application
         }
     }
 
-    // ================================================================
+   
     // FREEHAND
-    // ================================================================
+   
     public class FreehandShape : Shape
     {
         public List<Point> Points = new List<Point>();
@@ -250,9 +250,9 @@ namespace Paint_Application
         }
     }
 
-    // ================================================================
+   
     // GROUP
-    // ================================================================
+   
     public class GroupShape : Shape
     {
         public List<Shape> Children;

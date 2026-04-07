@@ -8,9 +8,9 @@ namespace Paint_Application
 {
     public partial class Form1 : Form
     {
-        // ============================================================
+        
         // FIELDS
-        // ============================================================
+        
         private List<Shape> shapes = new List<Shape>();
         private List<Shape> selectedShapes = new List<Shape>();
 
@@ -33,9 +33,9 @@ namespace Paint_Application
 
         private Button activeBtn = null;
 
-        // ============================================================
+        
         // CONSTRUCTOR
-        // ============================================================
+        
         public Form1()
         {
             InitializeComponent();
@@ -73,9 +73,9 @@ namespace Paint_Application
             this.KeyDown += Form1_KeyDown;
         }
 
-        // ============================================================
+        
         // TOOL BUTTONS
-        // ============================================================
+        
         private void btnSelect_Click(object sender, EventArgs e)
         {
             SetTool(DrawTool.Select, (Button)sender);
@@ -160,9 +160,9 @@ namespace Paint_Application
             b.FlatStyle = FlatStyle.Standard;
         }
 
-        // ============================================================
+        
         // PEN / BRUSH CONTROLS
-        // ============================================================
+        
         private void btnPenColor_Click(object sender, EventArgs e)
         {
             colorDialog1.Color = penColor;
@@ -221,9 +221,9 @@ namespace Paint_Application
             }
         }
 
-        // ============================================================
+        
         // UNDO / REDO / CLEAR / GROUP / UNGROUP
-        // ============================================================
+        
         private void btnUndo_Click(object sender, EventArgs e)
         {
             Undo();
@@ -321,9 +321,9 @@ namespace Paint_Application
             pnlCanvas.Invalidate();
         }
 
-        // ============================================================
+        
         // CANVAS MOUSE EVENTS
-        // ============================================================
+        
         private void Canvas_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
@@ -343,7 +343,7 @@ namespace Paint_Application
                     }
                 }
 
-                // Nếu KHÔNG giữ Ctrl → xóa selection cũ
+                // Nếu ko giữ Ctrl → xóa selection cũ
                 if (!ModifierKeys.HasFlag(Keys.Control))
                 {
                     foreach (Shape s in shapes)
@@ -447,9 +447,9 @@ namespace Paint_Application
                 previewShape.Draw(e.Graphics);
         }
 
-        // ============================================================
+        
         // HELPER METHODS
-        // ============================================================
+        
         private Shape BuildShape(Point p1, Point p2)
         {
             Rectangle r = MakeRect(p1, p2);
